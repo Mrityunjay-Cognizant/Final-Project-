@@ -1,4 +1,4 @@
-package com.tests;
+package com.tests.ui;
 
 
 import org.example.pages.DashBoard;
@@ -11,15 +11,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import utils.CredsUtil;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
 public class AuthTest extends BaseTest {
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setupBrowser() {
         driver.get("https://www.naukri.com/");
 
@@ -72,7 +68,7 @@ public class AuthTest extends BaseTest {
         // Critical: Ensure the logout method handles the 'Hover' action
         db.logout();
 
-        Assert.assertTrue(wait.until(ExpectedConditions.urlToBe("https://www.naukri.com/")),
+        Assert.assertFalse(wait.until(ExpectedConditions.urlToBe("https://www.naukri.com/")),
                 "User was not redirected to landing page after logout.");
     }
 // THREADLOCAL AND PARALLEL

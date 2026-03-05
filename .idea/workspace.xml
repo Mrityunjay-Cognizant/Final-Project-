@@ -5,18 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63afd8e6-76c5-4ae3-beba-7c740e84168c" name="Changes" comment="Merge remote-tracking branch 'origin/Mrityunjay_Profile_Management'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/main/java/org/example/pages/DashBoard.java&#10;#&#9;src/main/java/org/example/pages/ProfilePage.java&#10;#&#9;src/test/java/com/tests/ResumeHeaderAndSkillUpdateTest.java">
-      <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/tests/listeners/ScreenshotListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/AccountSettingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/AccountSettingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pages/ProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pages/ProfilePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/AuthTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/AuthTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/GeneralUiNavigationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/GeneralUiNavigationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/OrganizationBlocklistFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/OrganizationBlocklistFunctionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/ResumeHeaderAndSkillUpdateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/ResumeHeaderAndSkillUpdateTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/ResumeUploadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/ResumeUploadTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/searchFilterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/SearchFilterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/DriverSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/utils/DriverSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/AuthTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/ui/AuthTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/ui/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/GeneralUiNavigationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/ui/GeneralUiNavigationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/OrganizationBlocklistFunctionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/ui/OrganizationBlocklistFunctionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/ResumeHeaderAndSkillUpdateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/ui/ResumeHeaderAndSkillUpdateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/ResumeUploadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/ui/ResumeUploadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/SearchFilterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/ui/SearchFilterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/TempTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tests/stepDef/FaqTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/tests/stepDef/FaqTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,17 +63,20 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "TestNG.AuthTest.executor": "Run",
     "TestNG.AuthTest.verifyInvalidLoginErrorMessage.executor": "Run",
+    "TestNG.AuthTest.verifyLogout.executor": "Run",
     "TestNG.AuthTest.verifySuccessfulLogin.executor": "Run",
     "TestNG.C:/Users/2464120/OneDrive - Cognizant/Desktop/Final_hackthon/testng.xml.executor": "Run",
     "TestNG.GeneralUiNavigationTest.executor": "Run",
     "TestNG.OrganizationBlocklistFunctionTest.addToBlocklistAndRemoveFromIt.executor": "Run",
     "TestNG.OrganizationBlocklistFunctionTest.executor": "Run",
+    "TestNG.ProductTest.testGetProductByID.executor": "Run",
     "TestNG.ResumeHeaderAndSkillUpdateTest.executor": "Run",
     "TestNG.ResumeHeaderUpdateTest.editHeader.executor": "Run",
     "TestNG.ResumeHeaderUpdateTest.editSkill.executor": "Run",
@@ -96,6 +102,37 @@
     </key>
   </component>
   <component name="RunManager" selected="TestNG.C:/Users/2464120/OneDrive - Cognizant/Desktop/Final_hackthon/testng.xml">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="Final_hackthon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthTest.verifyLogout" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Final_hackthon" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tests.ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.tests.ui.AuthTest" />
+      <option name="METHOD_NAME" value="verifyLogout" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="C:/Users/2464120/OneDrive - Cognizant/Desktop/Final_hackthon/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Final_hackthon" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
@@ -106,16 +143,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ResumeUploadTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GeneralUiNavigationTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Final_hackthon" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.tests.*" />
+          <option name="PATTERN" value="com.tests.ui.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.tests.ResumeUploadTest" />
+      <option name="PACKAGE_NAME" value="com.tests.ui" />
+      <option name="MAIN_CLASS_NAME" value="com.tests.ui.GeneralUiNavigationTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -123,53 +160,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ResumeUploadTest.verifyCorrectResumeUpload" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductTest.testGetProductByID" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Final_hackthon" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.tests.*" />
+          <option name="PATTERN" value="com.tests.apiTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.tests.ResumeUploadTest" />
-      <option name="METHOD_NAME" value="verifyCorrectResumeUpload" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SearchFilterTest.verifyLocationFilter" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Final_hackthon" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.tests.SearchFilterTest" />
-      <option name="METHOD_NAME" value="verifyLocationFilter" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SearchFilterTest.verifySalaryFilter" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Final_hackthon" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.tests.SearchFilterTest" />
-      <option name="METHOD_NAME" value="verifySalaryFilter" />
+      <option name="PACKAGE_NAME" value="com.tests.apiTest" />
+      <option name="MAIN_CLASS_NAME" value="com.tests.apiTest.ProductTest" />
+      <option name="METHOD_NAME" value="testGetProductByID" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -180,10 +181,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/2464120/OneDrive - Cognizant/Desktop/Final_hackthon/testng.xml" />
-        <item itemvalue="TestNG.ResumeUploadTest.verifyCorrectResumeUpload" />
-        <item itemvalue="TestNG.ResumeUploadTest" />
-        <item itemvalue="TestNG.SearchFilterTest.verifyLocationFilter" />
-        <item itemvalue="TestNG.SearchFilterTest.verifySalaryFilter" />
+        <item itemvalue="TestNG.GeneralUiNavigationTest" />
+        <item itemvalue="TestNG.ProductTest.testGetProductByID" />
+        <item itemvalue="TestNG.AuthTest.verifyLogout" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -239,8 +240,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/tests/ResumeUploadTest.java</url>
-          <line>79</line>
+          <url>file://$PROJECT_DIR$/src/test/java/com/tests/ui/ResumeUploadTest.java</url>
+          <line>76</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>

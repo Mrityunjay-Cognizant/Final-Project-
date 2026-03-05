@@ -1,4 +1,4 @@
-package com.tests;
+package com.tests.ui;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;

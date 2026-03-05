@@ -1,11 +1,10 @@
-package com.tests;
+package com.tests.ui;
 
 import org.example.pages.AccountSettingPage;
 import org.example.pages.DashBoard;
 import org.example.pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utils.CredsUtil;
 

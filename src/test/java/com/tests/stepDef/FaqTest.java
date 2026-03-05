@@ -1,7 +1,6 @@
 package com.tests.stepDef;
 
-import com.tests.BaseTest;
-import io.cucumber.java.PendingException;
+import com.tests.ui.BaseTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,21 +8,15 @@ import org.example.pages.DashBoard;
 import org.example.pages.FaqPage;
 import org.example.pages.HomePage;
 
-import org.example.utils.DriverSetup;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import utils.CredsUtil;
 
 import java.io.IOException;
 
-public class FaqTest  {
+public class FaqTest extends BaseTest {
     private FaqPage fp;
     private String suggestedText;
-    private WebDriver driver;
 
-    public FaqTest(){
-        this.driver = DriverSetup.getDriver();
-    }
 
 
     @Given("User is on the FaqHomepage")

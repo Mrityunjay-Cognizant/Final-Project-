@@ -1,22 +1,23 @@
-package com.tests;
+package com.tests.ui;
 
+import org.example.utils.DriverSetup;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.testng.annotations.*;
 import utils.CredsUtil;
 
 import java.io.IOException;
-import java.time.Duration;
 
 public class BaseTest {
 
         protected WebDriver driver;
+     @Parameters("browser")
+    @BeforeMethod(alwaysRun = true) // always test=true , if we do grouping in xml it helps their
+    public void prepareModule(String browser) {
+        DriverSetup.prepareModule(browser);
+        driver =DriverSetup.getDriver();
 
-    @BeforeMethod(alwaysRun = true) // Use Method, not Test
-    public void prepareModule() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
         System.out.println("Browser launched for test method.");
     }
 

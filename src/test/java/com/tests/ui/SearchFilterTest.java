@@ -1,5 +1,5 @@
 
-package com.tests;
+package com.tests.ui;
 
 import org.example.pages.HomePage;
 import org.example.pages.SearchFilter;
@@ -54,7 +54,7 @@ public class SearchFilterTest extends BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         hp.typeSearch("QA Engineer");
         hp.clickSearch();
-        /// ujjo3rfnoiu3
+
 
         String urlBefore = driver.getCurrentUrl();
 

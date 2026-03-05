@@ -1,17 +1,16 @@
-package com.tests;
+package com.tests.ui;
 import org.example.pages.DashBoard;
 import org.example.pages.HomePage;
 import org.example.pages.ProfilePage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import utils.CredsUtil;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class ResumeHeaderAndSkillUpdateTest extends BaseTest{
+public class ResumeHeaderAndSkillUpdateTest extends BaseTest {
 
     @BeforeMethod
     public void setupBrowser() throws IOException {
