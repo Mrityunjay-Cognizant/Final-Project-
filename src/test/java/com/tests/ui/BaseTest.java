@@ -10,13 +10,14 @@ import java.io.IOException;
 /**
  * BaseTest is the single source of truth for browser lifecycle.
  *
- * FIX SUMMARY:
- * - setup() carries @BeforeMethod(alwaysRun = true) and initialises the driver.
- * - cleanupModule() carries @AfterMethod(alwaysRun = true) and quits the driver.
- * - All sub-class @BeforeMethod methods must NOT call DriverSetup.prepareModule()
- *   again. They should only navigate to a URL or perform login steps.
- *   TestNG calls BOTH the parent and child @BeforeMethod — the parent always
- *   runs first (correct order), so the driver is ready when the subclass method runs.
+ * HOW @BeforeMethod ORDERING WORKS IN TESTNG:
+ * When a subclass also has @BeforeMethod, TestNG runs them in this order:
+ *   1. BaseTest.setup()       ← launches browser, sets this.driver
+ *   2. SubClass.setupBrowser() ← can safely use this.driver (it's already set)
+ *
+ * If BaseTest.setup() fails (e.g. Chrome crash), this.driver stays null.
+ * The subclass @BeforeMethod then gets a NullPointerException on driver.get().
+ * The guard check below prevents that cascade and shows the real error instead.
  */
 public class BaseTest {
 
@@ -26,7 +27,15 @@ public class BaseTest {
     public void setup() {
         DriverSetup.prepareModule();
         this.driver = DriverSetup.getDriver();
-        System.out.println("Browser launched for test.");
+
+        if (this.driver == null) {
+            throw new IllegalStateException(
+                "Chrome failed to launch. Check DriverSetup — the system Chrome binary " +
+                "may not be found, or the cached Selenium binary is blocked by corporate policy. " +
+                "See the console log above for details."
+            );
+        }
+        System.out.println("Browser launched successfully.");
     }
 
     @AfterMethod(alwaysRun = true)
