@@ -1,36 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Regression Suite"  parallel="classes" thread-count="5"  >
-     <listeners >
-         <listener class-name="com.tests.listeners.ReportingListener"></listener>
+<suite name="Regression Suite" parallel="none" thread-count="1">
+    <listeners>
+        <listener class-name="com.tests.listeners.ReportingListener"></listener>
+    </listeners>
 
-     </listeners>
-
-    <test  name="User Authentication Tests"  >
-        <parameter  name="browser" value="chrome"></parameter>
-<!--        <groups>-->
-<!--            <run>-->
-<!--                <include name="login_flow"></include>-->
-<!--            </run>-->
-<!--        </groups>-->
-        <classes >
-           <class name="com.tests.ui.AuthTest" >
-<!--   <methods>-->
-<!--       <include name="verifyLogout"></include>-->
-<!--   </methods>-->
-
-           </class>
-           <class name="com.tests.ui.GeneralUiNavigationTest" />
-           <class name="com.tests.ui.ResumeHeaderAndSkillUpdateTest" />
-         <class name="com.tests.ui.ResumeUploadTest" />
-           <class name="com.tests.ui.SearchFilterTest" />
-
-
-       </classes>
-<!--        <packages>-->
-<!--            <package name="com.tests.ui" />-->
-<!--        </packages>-->
+    <test name="Naukri Functional Tests">
+        <classes>
+            <class name="com.tests.ui.AuthTest" />
+            <class name="com.tests.ui.GeneralUiNavigationTest" />
+            <class name="com.tests.ui.ResumeHeaderAndSkillUpdateTest" />
+            <class name="com.tests.ui.ResumeUploadTest" />
+            <class name="com.tests.ui.SearchFilterTest" />
+        </classes>
     </test>
-
 </suite>

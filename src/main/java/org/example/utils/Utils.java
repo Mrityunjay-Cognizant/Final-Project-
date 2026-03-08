@@ -12,7 +12,4 @@ import java.time.Duration;
 public class Utils {
     private final int DefaultDuration = 10;
 
-
-
-
 }

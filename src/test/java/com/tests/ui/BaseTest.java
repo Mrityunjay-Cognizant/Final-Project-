@@ -1,46 +1,34 @@
 package com.tests.ui;
 
-import org.apache.commons.io.FileUtils;
 import org.example.utils.DriverSetup;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import utils.CredsUtil;
-
-import java.io.File;
 import java.io.IOException;
-
 
 public class BaseTest {
 
-        protected WebDriver driver;
-     @Parameters("browser")
-    @BeforeMethod(alwaysRun = true) // always test=true , if we do grouping in xml it helps their
-    public void prepareModule(@Optional("chrome") String browser  ) {
-   if (browser == null) browser = "chrome";
+    protected WebDriver driver;
 
-        DriverSetup.prepareModule(browser);
-        driver =DriverSetup.getDriver();
-
-
-        System.out.println("Browser launched for test method.");
+    @BeforeMethod(alwaysRun = true)
+    public void setup() {
+        // Directly initialize the Chrome driver
+        DriverSetup.prepareModule();
+        this.driver = DriverSetup.getDriver();
+        System.out.println("Browser launched for test.");
     }
 
     @AfterMethod(alwaysRun = true)
     public void cleanupModule(ITestResult iTestResult) {
-
-        if (driver != null) {
-            driver.quit();
-            System.out.println("Browser closed.");
-        }
+        // Close the browser after every test method
+        DriverSetup.tearDown();
+        System.out.println("Browser closed.");
     }
-     @DataProvider(name = "creds")
-     public Object [][] dataPr() throws IOException {
+
+    @DataProvider(name = "creds")
+    public Object [][] dataPr() throws IOException {
+        // Pulls data from Excel for data-driven testing [cite: 280]
         return CredsUtil.getxl();
-     }
-
-
+    }
 }

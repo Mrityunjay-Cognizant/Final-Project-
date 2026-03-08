@@ -29,18 +29,23 @@ public class FaqTest {
 
     @Given("User is on the FaqHomepage")
     public void userIsOnTheFaqHomepage() throws IOException {
-        DriverSetup.prepareModule("chrome");
-//        this.driver = DriverSetup.getDriver();
+        // FIX 1: Remove "chrome" because prepareModule() now takes no arguments
+        DriverSetup.prepareModule();
+
+        // FIX 2: Assign the driver instance to the local variable
+        this.driver = DriverSetup.getDriver();
+
+        // Now driver is not null and can navigate
         driver.get("https://www.naukri.com/");
+
         Object[][] data = CredsUtil.getxl();
         String user = data[0][0].toString();
         String pass = data[0][1].toString();
+
         HomePage lp = new HomePage(driver);
-        DashBoard db = lp.login(user,pass);
+        DashBoard db = lp.login(user, pass);
 
         this.fp = db.navigateToFaq();
-
-
     }
     @When("User serches jo")
     public void userSerchesJo() {

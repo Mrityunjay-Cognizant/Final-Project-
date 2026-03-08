@@ -2,42 +2,39 @@ package org.example.utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 import java.time.Duration;
 
 public class DriverSetup {
 
-    private static ThreadLocal<WebDriver> driverThread = new ThreadLocal<>();
+    // Simple static variable for a single-threaded execution
+    private static WebDriver driver;
 
-    public static void prepareModule(String browser) {
-        // 2. Initialize the driver locally
-        WebDriver localDriver;
-        if (browser.equals("edge")){
-            localDriver = new EdgeDriver();
+    public static void prepareModule() {
+        // Only initialize if the driver is null
+        if (driver == null) {
+            ChromeOptions options = new ChromeOptions();
 
-        }else{
-           localDriver  = new ChromeDriver();
+            // Essential arguments to prevent browser crashes in corporate environments
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--remote-allow-origins=*");
+            options.addArguments("--start-maximized");
 
+            driver = new ChromeDriver(options);
+            // standard wait time for finding elements [cite: 216]
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
-
-
-        localDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        // 3. Set the local driver into the ThreadLocal container
-        driverThread.set(localDriver);
-        System.out.println("Browser launched on Thread ID: " + Thread.currentThread().getId());
     }
 
-    // 4. Use this method throughout your Page Objects/Tests to get the driver
     public static WebDriver getDriver() {
-        return driverThread.get();
+        return driver;
     }
 
     public static void tearDown() {
-        if (getDriver() != null) {
-            getDriver().quit();
-            driverThread.remove(); // 5. Important: Clean up memory
+        if (driver != null) {
+            driver.quit();
+            driver = null; // Important: Reset to null so it can be re-initialized
         }
     }
 }
