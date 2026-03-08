@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
+<!--
+    FIX: parallel="none" and thread-count="1" are CORRECT for this project.
+    The DriverSetup class uses a static (shared) WebDriver. Running tests in
+    parallel would cause race conditions and NullPointerExceptions.
+    The threading configuration in pom.xml has also been removed to match this.
+-->
 <suite name="Regression Suite" parallel="none" thread-count="1">
+
     <listeners>
         <listener class-name="com.tests.listeners.ReportingListener"></listener>
     </listeners>
@@ -13,6 +20,8 @@
             <class name="com.tests.ui.ResumeHeaderAndSkillUpdateTest" />
             <class name="com.tests.ui.ResumeUploadTest" />
             <class name="com.tests.ui.SearchFilterTest" />
+            <class name="com.tests.ui.OrganizationBlocklistFunctionTest" />
         </classes>
     </test>
+
 </suite>
